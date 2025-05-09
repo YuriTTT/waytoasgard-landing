@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Way to Asgard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    header p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .store-buttons {
+      margin-top: 30px;
+    }
+
+    .store-buttons a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .store-buttons img {
+      height: 50px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    details {
+      margin-bottom: 15px;
+      background-color: #222;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quiz {
+      background-color: #1b1b1b;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .quiz input[type="text"] {
+      padding: 10px;
+      width: 60%;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .quiz button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #e0b200;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .quiz input[type="text"] {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Игра, вдохновлённая сказками и мифами Скандинавии</h1>
+    <p>Погрузись в удивительный мир скандинавских легенд. Изучай богов, проходи интерактивные сказания и стань героем!</p>
+    <div class="store-buttons">
+      <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" /></a>
+      <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" /></a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Что внутри?</h2>
+    <details>
+      <summary>📜 Интерактивные сказания</summary>
+      <p>Проходи уровни, основанные на реальных легендах Севера — от Ивинду до великой битвы богов.</p>
+    </details>
+    <details>
+      <summary>🛡️ Персонажи и герои</summary>
+      <p>Изучай древних богов и героев: Один, Тор, Локи и другие, каждый со своей историей и способностями.</p>
+    </details>
+    <details>
+      <summary>🎮 Увлекательный геймплей</summary>
+      <p>Собирай команду, улучшай героев, участвуй в сражениях и открывай новые сказания.</p>
+    </details>
+  </section>
+
+  <section class="quiz">
+    <h2>🧠 Маленький квиз — получи награду</h2>
+    <p>Кто был богом грома в скандинавской мифологии?</p>
+    <input type="text" id="answer" placeholder="Твой ответ..." />
+    <button onclick="checkAnswer()">Ответить</button>
+    <p id="quiz-result"></p>
+  </section>
+
+  <footer>
+    © 2025 Way to Asgard. Все права защищены.
+  </footer>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim().toLowerCase();
+      const result = document.getElementById('quiz-result');
+      if (input === 'тор' || input === 'thor') {
+        result.innerText = 'Верно! Кристаллы ждут тебя в игре.';
+        result.style.color = 'lightgreen';
+      } else {
+        result.innerText = 'Увы, неверно. Попробуй ещё!';
+        result.style.color = 'salmon';
+      }
+    }
+  </script>
+</body>
+</html>
