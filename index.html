@@ -2,137 +2,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Way to Asgard</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 3em 1em 2em;
-            background: linear-gradient(to bottom, #00000088, #1a1a1a), url('main-visual.jpg') center/cover no-repeat;
-            color: #fff;
-        }
-        header h1 {
-            font-size: 2em;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .store-buttons img {
-            height: 60px;
-            margin: 1em;
-        }
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: #111;
-            padding: 2em 1em;
-        }
-        .feature {
-            margin: 1em;
-            text-align: center;
-            max-width: 320px;
-        }
-        .feature img {
-            width: 100%;
-            border-radius: 12px;
-        }
-        .quiz {
-            background-color: #222;
-            padding: 2em 1em;
-            text-align: center;
-        }
-        .quiz select {
-            margin: 0.5em;
-            padding: 0.5em;
-            font-size: 1em;
-        }
-        .quiz button {
-            padding: 0.7em 1.5em;
-            font-size: 1em;
-            margin-top: 1em;
-            cursor: pointer;
-        }
-        .promo-code {
-            margin-top: 1em;
-            font-size: 1.2em;
-            color: #0f0;
-        }
-        @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-    <script>
-        function checkAnswers() {
-            const answer1 = document.getElementById("q1").value;
-            const answer2 = document.getElementById("q2").value;
-            if (answer1 === "Loki" && answer2 === "Yggdrasil") {
-                document.getElementById("promo").innerText = "Your Promo Code: ASGARD500";
-                document.getElementById("store-buttons").style.display = "block";
-            } else {
-                document.getElementById("promo").innerText = "Try again!";
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Way to Asgard — a mobile game inspired by Norse myths and sagas. Collect heroes, fight giants, and explore the road to Asgard.">
+  <title>Way to Asgard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+    }
+    header {
+      text-align: center;
+      background: url('main-hero.jpg') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px 60px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 15px;
+    }
+    .store-badges {
+      margin-top: 30px;
+    }
+    .store-badges img {
+      height: 60px;
+      margin: 10px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #1a1a1a;
+      padding: 50px 20px;
+    }
+    .feature {
+      flex: 1 1 300px;
+      max-width: 320px;
+      margin: 10px;
+      text-align: center;
+    }
+    .feature img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .quiz-section {
+      background-color: #121212;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .quiz-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .quiz-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    select, button {
+      padding: 12px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .promo {
+      margin-top: 30px;
+      background-color: #262626;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      header {
+        padding: 60px 20px 40px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      .feature {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Collect heroes, fight giants, and ascend to Asgard</h1>
-    <div class="store-buttons" id="store-buttons" style="display: block;">
-        <a href="#"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
-        <a href="#"><img src="app-store-badge.png" alt="Download on the App Store"></a>
+  <header>
+    <h1>Collect heroes, fight giants, walk the Way to Asgard</h1>
+    <p>Inspired by Norse myths and sagas</p>
+    <div class="store-badges">
+      <a href="#"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
+      <a href="#"><img src="app-store-badge.png" alt="Download on the App Store" /></a>
     </div>
-</header>
+  </header>
 
-<section class="features">
+  <section class="features">
     <div class="feature">
-        <img src="heroes.jpg" alt="Heroes from the Eddas and Sagas" />
-        <h3>Heroes from the Eddas and Sagas</h3>
-    </div>
-    <div class="feature">
-        <img src="match3.jpg" alt="Match-3 with Unique Ultimates" />
-        <h3>Match-3 with Unique Ultimates</h3>
+      <img src="heroes.png" alt="Heroes from Eddas and Sagas" />
+      <h3>Heroes from Eddas and Sagas</h3>
     </div>
     <div class="feature">
-        <img src="map.jpg" alt="Fantasy Map of Scandinavia" />
-        <h3>Fantasy Map of Scandinavia</h3>
+      <img src="match3.png" alt="Match-3 with Unique Ultimates" />
+      <h3>Match-3 with Unique Ultimates</h3>
     </div>
-</section>
+    <div class="feature">
+      <img src="map.png" alt="Fantasy Map of the North" />
+      <h3>Fantasy Map of the North</h3>
+    </div>
+  </section>
 
-<section class="quiz">
-    <h2>Quiz: Earn 500 Crystals</h2>
-    <p>Answer two quick questions correctly and get a promo code!</p>
-    <div>
-        <label>Who is the god of mischief?</label><br />
+  <section class="quiz-section">
+    <h2>Answer & Get 500 Crystals!</h2>
+    <form class="quiz-form" id="quizForm">
+      <label>
+        Who is the all-father in Norse mythology?
         <select id="q1">
-            <option value="">Select an answer</option>
-            <option value="Thor">Thor</option>
-            <option value="Odin">Odin</option>
-            <option value="Loki">Loki</option>
+          <option value="">Choose...</option>
+          <option value="Thor">Thor</option>
+          <option value="Loki">Loki</option>
+          <option value="Odin">Odin</option>
         </select>
-    </div>
-    <div>
-        <label>What is the name of the World Tree?</label><br />
+      </label>
+      <label>
+        What is the name of the world tree?
         <select id="q2">
-            <option value="">Select an answer</option>
-            <option value="Asgard">Asgard</option>
-            <option value="Yggdrasil">Yggdrasil</option>
-            <option value="Midgard">Midgard</option>
+          <option value="">Choose...</option>
+          <option value="Yggdrasil">Yggdrasil</option>
+          <option value="Midgard">Midgard</option>
+          <option value="Fenrir">Fenrir</option>
         </select>
-    </div>
-    <button onclick="checkAnswers()">Submit</button>
-    <div class="promo-code" id="promo"></div>
-</section>
+      </label>
+      <button type="button" onclick="checkQuiz()">Submit</button>
+      <div id="result" class="promo" style="display:none;"></div>
+    </form>
+  </section>
 
+  <script>
+    function checkQuiz() {
+      const q1 = document.getElementById("q1").value;
+      const q2 = document.getElementById("q2").value;
+      const result = document.getElementById("result");
+      if (q1 === "Odin" && q2 === "Yggdrasil") {
+        result.style.display = "block";
+        result.innerHTML = "<strong>Your Promo Code:</strong> <code>WAY500</code><br/>Use it after installing the game!<br/><br/><a href='#'><img src='google-play-badge.png' alt='Get it on Google Play' style='height:50px;margin:10px;'/></a><a href='#'><img src='app-store-badge.png' alt='Download on the App Store' style='height:50px;margin:10px;'/></a>";
+      } else {
+        result.style.display = "block";
+        result.innerHTML = "Some answers are incorrect. Try again!";
+      }
+    }
+  </script>
 </body>
 </html>
