@@ -100,6 +100,60 @@
       font-weight: bold;
       cursor: pointer;
     }
+
+
+.feedback-section {
+  background-color: #1A1A1A;
+  padding: 40px 20px;
+  color: #DAC1A0;
+  text-align: center;
+}
+
+.feedback-section h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#feedbackForm {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#feedbackForm textarea,
+#feedbackForm input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  background-color: #333;
+  color: #fff;
+  resize: vertical;
+}
+
+#feedbackForm button {
+  background-color: #D4AF37;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#feedbackForm button:hover {
+  background-color: #e0ce86;
+}
+
+#feedbackSuccess {
+  margin-top: 10px;
+  color: #5BBE61;
+}
+
+
     .promo {
       margin-top: 30px;
       background-color: #262626;
@@ -170,6 +224,16 @@
     </form>
   </section>
 
+  <section class="feedback-section">
+  <h3>Found a bug or have feedback?</h3>
+  <form id="feedbackForm">
+    <textarea placeholder="Describe the issue or idea..." required></textarea>
+    <input type="email" placeholder="Email (optional)">
+    <button type="submit">Send</button>
+    <div id="feedbackSuccess" style="display:none;">Thanks for your feedback!</div>
+  </form>
+  </section>
+
   <script>
     function checkQuiz() {
       const q1 = document.getElementById("q1").value;
@@ -184,5 +248,25 @@
       }
     }
   </script>
+
+<script>
+  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    const message = this.querySelector("textarea").value.trim();
+    const email = this.querySelector("input").value.trim();
+
+    if (!message) return;
+
+    // TODO: Подключи сюда отправку на сервер, email или Discord webhook
+
+    this.reset();
+    document.getElementById("feedbackSuccess").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("feedbackSuccess").style.display = "none";
+    }, 4000);
+  });
+</script>
+  
 </body>
 </html>
