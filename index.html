@@ -22,6 +22,7 @@
     header h1 {
       font-size: 2.5em;
       margin: 0;
+      color: #DAC1A0;
     }
     header p {
       font-size: 1.2em;
@@ -40,6 +41,9 @@
       justify-content: center;
       background: #1a1a1a;
       padding: 50px 20px;
+    }
+    .features h3 {
+      color: #DAC1A0;
     }
     .feature {
       flex: 1 1 300px;
@@ -60,6 +64,7 @@
     .quiz-section h2 {
       font-size: 2em;
       margin-bottom: 20px;
+      color: #DAC1A0;
     }
     .quiz-form {
       max-width: 500px;
@@ -67,12 +72,27 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      color: #438FB1;
+     }
+     .quiz-form label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* выравнивание текста по левому краю */
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .quiz-form label select {
+      margin-top: 10px;
+    }
+    .quiz-form select, .quiz-form button {
+      width: 100%; /* чтобы все дропдауны и кнопка были одинаковой ширины */
     }
     select, button {
       padding: 12px;
       font-size: 1em;
       border-radius: 8px;
       border: none;
+      background-color: #DAC1A0;
     }
     button {
       background-color: #d4af37;
@@ -101,8 +121,8 @@
 </head>
 <body>
   <header>
-    <h1>Collect heroes, fight giants, walk the Way to Asgard</h1>
-    <p>Inspired by Norse myths and sagas</p>
+    <h1>A game inspired by the myths of Scandinavia</h1>
+    <p>Collect heroes, fight giants, walk the Way to Asgard</p>
     <div class="store-badges">
       <a href="#"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
       <a href="#"><img src="app-store-badge.png" alt="Download on the App Store" /></a>
@@ -157,7 +177,7 @@
       const result = document.getElementById("result");
       if (q1 === "Odin" && q2 === "Yggdrasil") {
         result.style.display = "block";
-        result.innerHTML = "<strong>Your Promo Code:</strong> <code>WAY500</code><br/>Use it after installing the game!<br/><br/><a href='#'><img src='google-play-badge.png' alt='Get it on Google Play' style='height:50px;margin:10px;'/></a><a href='#'><img src='app-store-badge.png' alt='Download on the App Store' style='height:50px;margin:10px;'/></a>";
+        result.innerHTML = "<strong>Great job! 500 Crystals are yours!</strong><br/><br/><strong>Your Promo Code:</strong> <code>WAY500</code><br/>Use it after installing the game!<br/><br/><a href='#'><img src='google-play-badge.png' alt='Get it on Google Play' style='height:50px;margin:10px;'/></a><a href='#'><img src='app-store-badge.png' alt='Download on the App Store' style='height:50px;margin:10px;'/></a>";
       } else {
         result.style.display = "block";
         result.innerHTML = "Some answers are incorrect. Try again!";
