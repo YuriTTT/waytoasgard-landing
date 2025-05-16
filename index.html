@@ -224,15 +224,16 @@
     </form>
   </section>
 
-  <section class="feedback-section">
+<section class="feedback-section">
   <h3>Found a bug or have feedback?</h3>
-  <form id="feedbackForm">
-    <textarea placeholder="Describe the issue or idea..." required></textarea>
-    <input type="email" placeholder="Email (optional)">
+  <form id="feedbackForm" action="https://formspree.io/f/mzzrodnq" method="POST">
+    <textarea name="message" placeholder="Describe the issue or idea.." required></textarea>
+    <input type="email" name="email" placeholder="Email (optional)">
     <button type="submit">Send</button>
     <div id="feedbackSuccess" style="display:none;">Thanks for your feedback!</div>
   </form>
-  </section>
+</section>
+
 
   <script>
     function checkQuiz() {
@@ -257,8 +258,6 @@
     const email = this.querySelector("input").value.trim();
 
     if (!message) return;
-
-    // TODO: Подключи сюда отправку на сервер, email или Discord webhook
 
     this.reset();
     document.getElementById("feedbackSuccess").style.display = "block";
